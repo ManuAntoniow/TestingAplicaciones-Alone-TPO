@@ -1,0 +1,25 @@
+
+PE-53: Como Usuario quiero poder modificar mi cuenta
+
+Requisitos previos:
+ya tener un usuario
+
+Priority: Medium
+
+Pasos:
+1 navegar hasta la seccion "update you account"
+2 cambiar contraseña,fecha de nacimineto, domicilio y teelfono
+3 clikear save
+4 confirmar que los campos se modificaron correctamente(mensaje de exito)
+
+Pasos:
+1 navegar hasta la seccion "update you account"
+2 intentar cambiar government ID
+3 clikear save
+4 confirmar que este campo no se pueda cambiar(mensaje de error)
+
+Pasos:
+1 navegar hasta la seccion "update you account"
+2 agregar un segundo e-mail
+3 clikear save
+4 confirmar que e-mail se agrego correctamente(mensaje de exito)
