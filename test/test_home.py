@@ -11,11 +11,11 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
 class TestTest2():
-  def setup_method(self, method):
+  def setup_method(self):
     self.driver = webdriver.Chrome()
     self.vars = {}
   
-  def teardown_method(self, method):
+  def teardown_method(self):
     self.driver.quit()
   
   def test_test2(self):
@@ -37,3 +37,10 @@ class TestTest2():
     self.driver.find_element(By.ID, "logo").click()
     assert "Shop by Category:" in category
     # Mostar algun mensaje en consola de exito
+    print("Se completo exitosamente el test")
+
+#-----------Main-----------------#
+test = TestTest2()
+test.setup_method()
+test.test_test2()
+test.teardown_method()
