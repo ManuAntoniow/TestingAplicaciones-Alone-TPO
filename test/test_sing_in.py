@@ -19,19 +19,19 @@ class TestTest3():
     self.driver.quit()
   
   def test_test3(self):
-    # Assert que ningun perfil este logueado
-    #sing_in = self.driver.find_element(By.LINK_TEXT, 'Sign In')
-    #assert "Sing In" in sing_in
     self.driver.get("http://127.0.0.1:5000/")
     self.driver.set_window_size(1936, 1096)
+    # Assert que ningun perfil este logueado
+    sing_in = self.driver.find_element(By.LINK_TEXT, "Sign In").is_displayed()
+    assert sing_in == True
     self.driver.find_element(By.LINK_TEXT, "Sign In").click()
     self.driver.find_element(By.NAME, "email").send_keys("pepe@gmail.com")
     self.driver.find_element(By.NAME, "password").click()
     self.driver.find_element(By.NAME, "password").send_keys("1234")
     self.driver.find_element(By.CSS_SELECTOR, "p:nth-child(3) > input").click()
     # Assert user name sea pepe y este visible
-    #user_name = self.driver.find_element(By.CLASS_NAME, "dropbtn")
-    #assert "pepe" in user_name
+    user_name = self.driver.find_element(By.CLASS_NAME, "dropbtn").text
+    assert "pepe" in user_name
     # Mostar algun mensaje en consola de exito
     print("Se completo exitosamente el test")
 

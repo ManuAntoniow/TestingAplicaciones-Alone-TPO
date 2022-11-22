@@ -21,20 +21,14 @@ class TestTest1():
   def test_test1(self):
     self.driver.get("http://127.0.0.1:5000/")
     self.driver.set_window_size(965, 775)
-    #Iniciar sesion
-    self.driver.find_element(By.LINK_TEXT, "Sign In").click()
-    self.driver.find_element(By.NAME, "email").send_keys("pepe@gmail.com")
-    self.driver.find_element(By.NAME, "password").click()
-    self.driver.find_element(By.NAME, "password").send_keys("1234")
-    self.driver.find_element(By.CSS_SELECTOR, "p:nth-child(3) > input").click()
-    # Assert user name sea pepe y este visible
-    user_name = self.driver.find_element(By.XPATH, '//*[@id="title"]/div[1]/button').text
-    assert "pepe" in user_name
+    # Assert que la barra de busqueda sea visible
+    logo = self.driver.find_element(By.ID, "searchBox").is_displayed()
+    assert logo == True
     self.driver.find_element(By.ID, "searchBox").click()
     self.driver.find_element(By.ID, "searchBox").send_keys("dress")
     self.driver.find_element(By.ID, "searchButton").click()
     # Mostar algun mensaje en consola de exito
-    print("Se completo exitosamente el test", user_name)
+    print("Se completo exitosamente el test")
 
 #-----------Main-----------------#
 test = TestTest1()
